@@ -1,0 +1,439 @@
+<?php
+ 
+// Starting the session, to use and
+// store data in session variable
+session_start();
+  
+// If the session variable is empty, this
+// means the user is yet to login
+// User will be sent to 'login.php' page
+// to allow the user to login
+if (!isset($_SESSION['username'])) {
+    $_SESSION['msg'] = "You have to log in first";
+    header('location: login.php');
+}
+  
+// Logout button will destroy the session, and
+// will unset the session variables
+// User will be headed to 'login.php'
+// after logging out
+if (isset($_GET['logout'])) {
+    session_destroy();
+    unset($_SESSION['username']);
+    header("location: login.php");
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Galaxy Games</title>
+    <link rel = "icon" href = "logo.png" 
+          type = "image/x-icon">
+    <link rel="stylesheet" type="text/css" href="galaxy.css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,regular,italic,600,600italic,700,700italic,800,800italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css?family=Righteous:regular" rel="stylesheet" />
+</head>
+<body style="background-color:rgb(18,18,18);">
+
+     <?php  if (isset($_SESSION['username'])) : ?>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <table>
+        <tr>
+            <td>&nbsp&nbsp</td>
+            <td><img src="logo2.png" style="width:87px;" /></td>
+            <td style="font-family:'vermin_vibes_vregular';color:White;font-size:25px;">GALAXY</td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td><img src="icons8-less-than-64.png" style="margin-top:7.5px;" width="20px"></td>
+            <td>&nbsp;&nbsp;</td>
+            <td><img src="search.png" width="180px"></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="font-family:sans-serif;color:rgb(151,151,151)"><a>Discover</a></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="font-family:sans-serif;color:rgb(151,151,151);"><a>Browse</a></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="font-family:sans-serif;color:rgb(151,151,151)"><a>News</a></td>
+            <td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+            <td style="font-family:sans-serif;color:rgb(151,151,151)"><a>Wishlist</a></td>
+            <td>&nbsp;&nbsp;</td>
+            <td style="font-family:sans-serif;color:rgb(151,151,151)"><a>Cart</a></td>
+            <td  style="color:rgb(151,151,151);">&nbsp;&nbsp;|&nbsp;&nbsp;</td>
+            <td><img src="Screenshot 2022-07-16 231857.png" width="45px"></td>
+            <td>&nbsp;</td>
+            <td style="color:white;font-family:'Matura MT Script Capitals';font-size:23px;"><?php echo $_SESSION['username']; ?></td>
+            <td>&nbsp;&nbsp;</td>
+            
+        </tr>
+    </table>
+    <table>
+        <tr>
+                <td>
+                    <nav>
+            <dl style="color:white;font-family:Segoe UI;line-height:1.65em;">
+                    <dd><pre>                             </pre></dd>
+                    <dd style="font-family:sans-serif;color:rgb(151,151,151);"><img src='tag.png' width="27px">&nbsp;&nbsp;&nbsp;&nbsp;Store</dd>
+                    <dd>&nbsp;</dd>
+                    <dd style="font-family:sans-serif;color:rgb(151,151,151);"><img src='icons8-grid-48.png' width="32px">&nbsp;&nbsp;&nbsp;&nbsp;Library</dd>
+                    <dd>&nbsp;</dd>
+                    <dd style="font-family:sans-serif;color:rgb(151,151,151);"><img src='icons8-logout-30.png' width="29px">&nbsp;&nbsp;&nbsp;&nbsp;<a href="index.php?logout='1'" style="text-decoration:none;color:rgb(151,151,151);">Log out</a></dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    <dd>&nbsp;</dd>
+                    
+
+                    
+
+            </dl>
+        </nav></td>
+        
+        <td><div id="div1" class="targetDiv" style="background-color:rgb(35,34,68);
+        background-image: linear-gradient(to bottom right,
+        #120a34,
+        #6625a3,
+        #0a2bb6, #05d6b3);border-radius:15px;width:900px;padding-bottom:55px;" width="100%" height="100"><a href="Summer Sale.html" style="text-decoration:none;"><img src="summer1.png" style="float:right;width:500px;">
+        <pre id="tag1" style="font-family:sans-serif;color:White;font-size:17px;font-weight:650;">
+
+
+
+
+
+        <span style="font-family:Niagara solid;color:White;font-size:50px;font-weight:400;">SUMMER SALE</span>
+        <span style="font-family:Niagara solid;color:White;font-size:30px;line-height:0.6em;font-weight:400;">AUG 01-SEP 20</span>
+
+
+        <span style="font-family:sans-serif;color:White;font-size:17px;">SALES AND SPECIALS</span>
+        
+        Things are heating up with our Summer
+
+        Sale! Save upto 75% on top titles and 
+
+        finish the season off right
+
+
+        <span style="padding:18px;background-color:white;color:black;border-radius:10px;font-weight:700;">   SAVE NOW   </span>
+        </pre>   </a> 
+</div>
+    <div id="div2" class="targetDiv" style="display:none;background-image:url('Screenshot 2022-07-19 232750_cleanup.png');background-size:cover;border-radius:15px;width:900px;padding-bottom:55px;" width="100%" height="100"><a href="genshin.html" style="text-decoration:none;">
+        <pre id="tag1" style="font-family:sans-serif;color:White;font-size:17px;font-weight:650;">
+
+
+
+
+        <span style="font-family:mantiniaregular;color:White;font-size:60px;font-weight:400;line-height:0.08em;">GenshiN
+     <span style="font-family:mantiniaregular;color:White;font-size:35px;font-weight:400;">IMPACT</span></span>
+
+
+        <span style="font-family:sans-serif;color:White;font-size:17px;">VERSION 2.8 NOW AVAILABLE</span>
+        
+        This update brings exciting summer
+
+        island adventures, elegant outfits and
+
+        intriguing stories about Shikanaoin
+
+        Heizou and friends
+
+
+
+        <span style="padding:18px;background-color:white;color:black;border-radius:10px;font-weight:700;">   PLAY FOR FREE   </span>         <span style="color:white;font-weight:200;">ADD TO WISHLIST</span>
+        </pre>    
+</a></div>
+    <div id="div3" class="targetDiv" style="display:none;background-image:url('Screenshot 2022-07-20 000017.png');background-size:cover;background-blend-mode:darken;border-radius:15px;width:900px;padding-bottom:55px;" width="100%" height="100">
+        <pre id="tag1" style="font-family:sans-serif;color:rgb(0, 0, 0);font-size:17px;font-weight:650;">
+
+
+
+
+
+
+            
+        
+        
+
+        <span style="font-family:sans-serif;color:rgb(0, 0, 0);font-size:17px;">COMING SOON</span>
+
+
+        Battle your way to victory in all new
+
+        free-to-play, 40-person Brawler Royale 
+
+        where anyone can be a champion.
+
+        
+        <span style="padding:18px;background-color:rgb(255, 255, 255);color:black;border-radius:10px;font-weight:700;">   PLAY FOR FREE   </span>         <span style="color:rgb(0, 0, 0);font-weight:200;">ADD TO WISHLIST</span>
+        </pre>    
+    </div>
+    <div id="div4" class="targetDiv" style="display:none;background-image:url(1957880.jpg);background-size:cover;background-blend-mode:darken;border-radius:15px;width:900px;padding-bottom:55px;" width="100%" height="100"><a href="pubg.html" style="text-decoration:none;">
+        <pre id="tag1" style="font-family:sans-serif;color:rgb(0, 0, 0);font-size:17px;font-weight:650;">
+
+
+            <span style="font-family:pubg;background-color:rgb(229,163,25);color:black;font-size:60px;font-weight:400;">PLAYERUNKNOWN'S</span>
+        <span style="font-family:pubg;color:rgb(229,163,25);font-size:90px;text-shadow:0px 25px 25px solid black;font-weight:300;">BATTLEGROUND</span>
+
+        <span style="font-family:sans-serif;color:rgb(0, 0, 0);font-size:17px;">BATTLEGROUNDS FOR FREE</span>
+        
+        Land on strategic locations, loot weapons
+
+        and supplies, and survive to become the 
+
+        last team standing across various, diverse Battlegrounds
+
+
+        <span style="padding:18px;background-color:rgb(255, 255, 255);color:black;border-radius:10px;font-weight:700;">   PLAY FOR FREE   </span>         <span style="color:rgb(0, 0, 0);font-weight:200;">ADD TO WISHLIST</span>
+        </pre></a>    
+     </div>
+    <div id="div5" class="targetDiv" style="display:none;background-image:url('Screenshot\ 2022-07-20\ 003917.png');background-size:cover;background-blend-mode:darken;border-radius:15px;width:900px;padding-bottom:55px;" width="100%" height="100"><a href="rdr2.html" style="text-decoration:none;">
+        <pre id="tag1" style="font-family:sans-serif;color:rgb(255, 255, 255);font-size:17px;font-weight:650;">
+
+
+            
+
+
+         
+            
+
+            
+        <span style="font-family:sans-serif;color:rgb(255, 255, 255);font-size:17px;text-shadow:0px 30px 30px solid black;">On OFF   <span style="background-color:rgb(0,116,228);padding:3px;border-radius:5px;"> -50% </span></span>
+        
+        Step into the vibrant, ever-evolving world 
+
+        of Red Dead Online and experience life in
+         
+        frontier America. Chase down bounties, 
+
+        battle outlaw gangs and other players.
+
+        
+        <span style="padding:18px;background-color:rgb(255, 255, 255);color:black;border-radius:10px;font-weight:700;">   BUY NOW   </span>         <span style="color:rgb(255, 255, 255);font-weight:200;">ADD TO WISHLIST</span>
+        </pre> </a>   
+    </div>
+    <div id="div6" class="targetDiv" style="display:none;background-image:url(valorant1.png);background-size:cover;background-blend-mode:darken;border-radius:15px;width:900px;padding-bottom:55px;" width="100%" height="100"><a href="valorant.html" style="text-decoration:none;">
+        <pre id="tag1" style="font-family:sans-serif;color:rgb(255, 255, 255);font-size:17px;font-weight:650;">
+
+
+        <span style="font-family:vermin_vibes_vregular;color:rgb(242,66,80);font-size:55px;font-weight:400;text-shadow:1px 1px rgb(32, 0, 0);">VALORANT</span>
+
+
+            
+            
+        <span style="font-family:sans-serif;color:rgb(255, 255, 255);font-size:17px;text-shadow:0px 30px 30px solid black;">FREE TO PLAY</span>
+        
+        Blend your style and experience on a global,
+
+        competitive stage. Attack and defend your side 
+
+        using sharp gunplay and tactical abilities.
+
+        
+        <span style="padding:18px;background-color:rgb(255, 255, 255);color:black;border-radius:10px;font-weight:700;">   PLAY FOR FREE   </span>         <span style="color:rgb(255, 255, 255);font-weight:200;">ADD TO WISHLIST</span>
+        </pre>  </a>  
+    </div>
+</td>
+
+ <script>
+ $(function() {
+    $('.showSingle').click(function() {
+      $('.targetDiv').not('#div' + $(this).attr('target')).hide();
+      $('#div' + $(this).attr('target')).toggle();
+    });
+  });
+  </script>
+
+        <td><table style="line-height: 1.3em;">
+                <div class="buttons"><tr><td><pre>       </pre></td><div><td style="font-family:sans-serif;font-size:17px;color:white;" class="demo cursor"><a class="showSingle" target="1" href="Summer Sale.html" target="_self"><img src="summersale.png" width="45px" style="float:left;border-radius:10px;"><pre style="color:white;font-family:sans-serif;">  Summer Sale
+  2022</pre></a></div></td></tr>
+                <tr><td><pre>       </pre></td><div><td style="font-family:sans-serif;font-size:17px;color:white;" class="demo cursor"><a class="showSingle" target="2"><img src="genshin.png" width="45px" style="float:left;border-radius:10px;"><pre style="color:white;font-family:sans-serif;">  Genshin
+  Impact</pre></a></div></td></tr>
+                <tr><td><pre>       </pre></td><div><td style="font-family:sans-serif;font-size:17px;color:white;" class="demo cursor"><a class="showSingle" target="3"><img src="rumble.png" width="45px" style="float:left;border-radius:10px;"><pre style="color:white;font-family:sans-serif;">  Rumbleverse
+                </pre></a></div></td></tr>
+                <tr><td><pre>       </pre></td><div><td style="font-family:sans-serif;font-size:17px;color:white;" class="demo cursor"><a class="showSingle" target="4"><img src="pubg.png" width="45px" style="float:left;border-radius:10px;"><pre style="color:white;font-family:sans-serif;">  PUBG
+                </pre></a></div></td></tr>
+                <tr><td><pre>       </pre></td><div><td style="font-family:sans-serif;font-size:17px;color:white;" class="demo cursor"><a class="showSingle" target="5"><img src="Screenshot 2022-07-16 212953.jpg" width="45px" style="float:left;border-radius:10px;"><pre style="color:white;font-family:sans-serif;">  Red Dead
+  Redemption 2</pre></a></div></td></tr>
+                <tr><td><pre>       </pre></td><div><td style="font-family:sans-serif;font-size:17px;color:white;" class="demo cursor"><a class="showSingle" target="6"><img src="valorant.png" width="45px" style="float:left;border-radius:10px;"><pre style="color:white;font-family:sans-serif;">  Valorant
+                </pre></a></div></td></tr></div>
+        </table></td>
+    </tr></table>
+    
+    <div><table style="font-family:sans-serif;font-weight:400">
+        <tr><td><pre>                                  </pre></td></tr>
+        <tr style="color:White"><td><pre>                                  </pre></td><td style="font-size:17px;font-weight:400;">Summer Spotlight  <i class="arrow right"></i></td>
+        <td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<button class="button round"><i class="arrow left"></i></button>                       <button  class="button round"><i class="arrow right"></i></button></td>
+        </tr>
+        
+        <tr>
+            <td><pre>                                  </pre></td>
+            <div><td><pre style="font-size:12px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-07-16 212744.jpg" width="225px">
+Evil Dead: The Game
+
+<span style="background-color:rgb(0,116,228);padding:3px;border-radius:5px;font-weight:800;font-size:15px;"> -25% </span>  <span style="color:rgb(151,151,151);"><s>&#8377;939</s></span>  <span>&#8377;704.25</span>
+           </pre></td>
+           <td>&nbsp;</td>
+           <td><pre style="font-size:12px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-07-16 212813.jpg" width="225px">
+Vampire-The Masquerade
+            
+<span style="background-color:rgb(0,116,228);padding:3px;border-radius:5px;font-weight:800;font-size:15px;"> -15% </span>  <span style="color:rgb(151,151,151);"><s>&#8377;1,179</s></span>  <span>&#8377;1,002.15</span>
+                       </pre></td>
+                       
+        <td>&nbsp;</td>
+           <td><pre style="font-size:12px;color:white;font-family:sans-serif;"><a href="sifu.html"><img src="Screenshot 2022-07-16 212848.jpg" width="225px"></a>
+Sifu
+            
+<span style="background-color:rgb(0,116,228);padding:3px;border-radius:5px;font-weight:800;font-size:15px;"> -20% </span>  <span style="color:rgb(151,151,151);"><s>&#8377;939</s></span>  <span>&#8377;751.20</span>
+           </pre></td>
+        <td>&nbsp;</td>
+        <td><pre style="font-size:12px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-07-16 212930.jpg" width="225px">
+FarCry 6
+                        
+<span style="background-color:rgb(0,116,228);padding:3px;border-radius:5px;font-weight:800;font-size:15px;"> -60% </span>  <span style="color:rgb(151,151,151);"><s>&#8377;3,499</s></span>  <span>&#8377;1,150.5</span>
+                    </pre></td>
+                    <td>&nbsp;</td>
+        <td><pre style="font-size:12px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-07-16 212953.jpg" width="225px">
+Red Dead Redemption 2
+                        
+<span style="background-color:rgb(0,116,228);padding:3px;border-radius:5px;font-weight:800;font-size:15px;"> -50% </span>  <span style="color:rgb(151,151,151);"><s>&#8377;1,855</s></span>  <span>&#8377;627.25</span>
+                    </pre></td>
+                </div>
+
+   </tr></table></div>
+   <pre style="font-size:17px;color:white;font-family:sans-serif;">                                                        New Releases</pre>
+<div style="margin-right:200px;">
+    <table style="font-family:sans-serif;font-weight:400;color:white;">
+
+<tr><td><pre>                                 </pre></td><td><pre  style="font-size:15px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-08-04 084237.png" style="border-radius:15px;width:380px;">&nbsp;
+Fall Gays
+    
+<span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">Pusheen is ready for her next Adventure! This purrfectly 
+adorable pair are now in Fall Gays Store now.</span>
+
+<span>Free</span></pre></td>
+<td><pre  style="font-size:15px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-08-04 084310.png" style="border-radius:15px;width:380px;">&nbsp;
+Saints Row
+    
+<span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">Pre-purchase now and get the Expansion Pass, plus the
+The Idols anachy pack for the neon equipment</span>
+
+<span>&#8377;2,749</span></pre></td>
+<td><pre  style="font-size:15px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-08-04 084337.png" style="border-radius:15px;width:380px;">
+Ravenlok
+
+<span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">Experience the fairytale reimagination of a kingdom  
+troubled by an evil queen and a young girl's destiny.</span>
+
+ <span style="color:rgb(255, 255, 255);">Coming Soon</span></pre></td>
+
+    </tr>
+    </table>
+</div>
+<pre style="font-size:17px;color:white;font-family:sans-serif;">                                                       FREE GAMES</pre>
+<div style="margin-right:200px;">
+    <table style="font-family:sans-serif;font-weight:400;color:white;">
+
+<tr><td><pre>                                 </pre></td><td><pre  style="font-size:15px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-08-04 084732.png" style="border-radius:15px;width:280px;">&nbsp;&nbsp;
+
+Idle Champions of the Forgotten Realms
+
+<span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">Free Now - Aug 05 at 8:30AM</span>
+</pre></td>
+<td><pre  style="font-size:15px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-08-04 084749.png" style="border-radius:15px;width:280px;">&nbsp;&nbsp;
+
+Wonder Boy The Dragon Trap
+   
+<span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">Free Now - Aug 05 at 8:30AM</span>
+</pre></td>
+<td><pre  style="font-size:15px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-08-04 084807.png" style="border-radius:15px;width:280px;">&nbsp;&nbsp;
+
+ Shop Titans
+ 
+ <span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">Free Aug 12 to Aug 18 </span>
+</pre></td>
+<td><pre  style="font-size:15px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-08-04 084821.png" style="border-radius:15px;width:280px;">
+
+Tannenberg
+
+<span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">Free Aug 12 to Aug 18 </span>
+</pre></td>
+    
+    </tr>
+    </table>
+</div>
+<div>
+<table style="font-family:sans-serif;font-weight:400;color:white;">
+
+<tr><td><pre>                                 </pre></td><td  style="font-size:20px;font-weight:400;font-family:sans-serif;">Summer savings are heating up</td></tr>
+<tr><td></td><td><pre  style="font-size:15px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-07-16 213219.jpg" style="border-radius:15px;width:570px;">&nbsp;&nbsp;&nbsp;
+
+Disney Speedstorm - Coming Soon
+
+<span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">Drift into the ultimate hero-based combat racing game, set on high speed circuits
+inspired by Disney and Pixar worlds.</span>
+</pre></td>
+<td><pre  style="font-size:15px;color:white;font-family:sans-serif;"><img src="Screenshot 2022-07-16 213246.jpg" style="border-radius:15px;width:570px;">
+
+Rocket League
+
+<span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">Hit the field in a sleek, silver icon! James Bond's Aston Martin DBS is now available
+in the Item shop.</span>
+</pre></td>
+</tr>
+</table>
+</div>
+<div style="margin-left:254px;"><br><br>
+<pre style="font-size:13px;color:rgb(255, 255, 255);font-family:sans-serif;"><img src="Screenshot 2022-07-20 193738.png" width="700px;" style="float:left;">
+
+
+
+
+            Explore Our Catalog
+
+
+<span style="font-size:10px;color:rgb(151,151,151);font-family:sans-serif;">            Browse by genre, features, price and more to find your next
+            favourite game.</span>
+
+
+
+
+            <span style="font-size:10px;color:rgb(0, 0, 0);background-color:white;border-radius:8px;padding:20px;font-weight:600;">LEARN MORE</span>
+
+
+
+
+
+
+
+
+
+
+        </pre>
+</div>
+<div style="background-color:rgb(42,42,42);font-family:sans-serif;font-weight:400;font-size:13px;color:white;">
+<pre style="font-family:sans-serif;color:white;">
+    
+    
+                                    <img src="facebook.png" width="30px">        <img src="twitter.png" width="30px">        <img src="you.png" width="30px">
+
+
+
+                                    <span style="color:rgb(151,151,151)">© 2022, Galaxy Games, Inc. All Rights Reserved. 
+                                    Non-US transaction through Galaxy Games International $, a.r.l.</span>
+                                
+                                    
+                                    Terms of Service          Privacy Policy          Store Refund Policy
+                                
+                                
+                                </pre>
+</div>
+<?php endif ?>
+</body>
+</html>

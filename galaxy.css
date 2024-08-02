@@ -1,0 +1,116 @@
+@font-face {
+    font-family: 'vermin_vibes_vregular';
+    src: url('verminvibesv-zlg3-webfont.woff2') format('woff2'),
+         url('verminvibesv-zlg3-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'mantiniaregular';
+    src: url('mantinia_regular-webfont.woff2') format('woff2'),
+         url('mantinia_regular-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+@font-face {
+    font-family: 'pubg';
+    src: url('headlinerno.45_demo-webfont.woff2') format('woff2'),
+         url('headlinerno.45_demo-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.rot{
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+  }
+.demo{
+    padding-left:10px;
+    padding-right:50px;
+    padding-top:6.5px;
+    padding-bottom:6.5px;
+}
+.showSingle:link{text-decoration:none;
+color:white;}
+.demo:hover{
+    background-color:rgb(37,37,37);
+    border-radius:15px;
+    text-decoration:none;
+    color:White;
+    padding-left:10px;
+    padding-right:50px;
+    padding-top:6.5px;
+    padding-bottom:6.5px;
+}
+.demo:active{
+    background-color:rgb(90, 90, 90);
+    border-radius:15px;
+    text-decoration:none;
+    color:White;
+    padding-left:10px;
+    padding-right:50px;
+    padding-top:6.5px;
+    padding-bottom:6.5px;
+    transform: translateY(4px);
+
+}
+.cursor {
+    cursor: pointer;
+  }
+.right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+  }
+.arrow {
+    border: solid rgb(255, 255, 255);
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+  .button {
+    position: relative;
+    background-color:black;
+    border: none;
+    border-radius:20px;
+    font-size: 6px;
+    color: rgb(255,255,255);
+    padding: 20px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
+  }
+  
+  .button:after {
+    content: "";
+    background:rgb(151,151,151);
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px!important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
+  }
+  
+  .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
+  }
+  .left {
+    transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+  }
+  .round {
+    border-radius: 50%;
+  }
